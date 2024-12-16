@@ -2,7 +2,7 @@
 
 from typing import List
 
-def is_safe(problem_damper: bool, lst: List) -> bool:
+def is_safe(lst: List) -> bool:
 	first = True
 	check1 = 0
 	check2 = 0
@@ -29,10 +29,9 @@ with open("input.txt", "r") as file:
 	safe_count = 0
 	for i in file.readlines():
 
-		problem_damper = True
 		lst = [int(x) for x in i.split()]
 		
-		if is_safe(problem_damper, lst):
+		if is_safe(lst):
 			safe_count += 1
 	
 	print(safe_count)
