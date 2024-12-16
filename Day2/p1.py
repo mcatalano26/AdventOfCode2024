@@ -7,18 +7,18 @@ def is_safe(lst: List) -> bool:
 	check1 = 0
 	check2 = 0
 
-	for j in lst:
+	for curr in lst:
 		if first:
-			current = j
+			prev = curr
 			first = False
 			continue
-		if abs(current - j) <= 3 and abs(current - j) >= 1:
+		if abs(prev - curr) <= 3 and abs(prev - curr) >= 1:
 			check1 += 1
-		if current-j < 0:
+		if prev-curr < 0:
 			check2 += 1
-		if current-j > 0:
+		if prev-curr > 0:
 			check2 -= 1
-		current = j
+		prev = curr
 
 	if abs(check1) == len(lst)-1 and abs(check2) == len(lst)-1:
 		return True
