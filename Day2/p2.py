@@ -1,6 +1,7 @@
 # https://adventofcode.com/2024/day/2
 
 from typing import List, Tuple
+from icecream import ic
 
 def problem_dampener_run(lst: List, ind: int) -> Tuple[List, List]:
 	lst1 = lst.copy()
@@ -37,16 +38,20 @@ def is_safe(problem_dampener: bool, lst: List) -> bool:
 	return False
 
 
-with open("input.txt", "r") as file:
-	safe_count = 0
-	for i in file.readlines():
+def __main__():
 
-		lst = [int(x) for x in i.split()]
+	with open("input.txt", "r") as file:
+		safe_count = 0
+		for i in file.readlines():
 
-		if is_safe(True, lst): safe_count += 1; continue
+			lst = [int(x) for x in i.split()]
 
-		lst.pop(0)
-		if is_safe(False, lst): safe_count += 1
+			if is_safe(True, lst): safe_count += 1; continue
+
+			lst.pop(0)
+
+			if is_safe(False, lst): safe_count += 1
+	return safe_count
 	
-	print(safe_count)
+ic(__main__())
 			
