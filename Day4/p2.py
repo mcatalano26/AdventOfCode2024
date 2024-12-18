@@ -34,32 +34,6 @@ def up_left_diagonal_matches(matrix: List[List[str]]) -> int:
                                 continue
     return matches
 
-def up_right_diagonal_matches(matrix: List[List[str]]) -> int:
-    matches = 0
-    for row_id, row in enumerate(matrix):
-            for column_id, letter in enumerate(row):
-                  if letter == "X":
-                        if row_id-3>=0:
-                            try:
-                                if matrix[row_id-1][column_id+1] == "M" and matrix[row_id-2][column_id+2] == "A" and matrix[row_id-3][column_id+3] == "S":
-                                        matches += 1
-                            except IndexError:
-                                continue
-    return matches
-
-def down_left_diagonal_matches(matrix: List[List[str]]) -> int:
-    matches = 0
-    for row_id, row in enumerate(matrix):
-            for column_id, letter in enumerate(row):
-                  if letter == "X":
-                        if column_id-3>=0:
-                            try:
-                                if matrix[row_id+1][column_id-1] == "M" and matrix[row_id+2][column_id-2] == "A" and matrix[row_id+3][column_id-3] == "S":
-                                        matches += 1
-                            except IndexError:
-                                continue
-    return matches
-
 def __main__():
     with open("input.txt", "r") as file:
         matrix = []
