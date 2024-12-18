@@ -4,8 +4,7 @@ from typing import List
 from icecream import ic
 
 def is_safe(lst: List) -> bool:
-	check1 = 0
-	check2 = 0
+	check1, check2 = 0, 0
 
 	for ind, curr in enumerate(lst):
 		if ind == 0: prev = curr; continue

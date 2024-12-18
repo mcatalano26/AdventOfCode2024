@@ -15,8 +15,7 @@ def problem_dampener_run(lst: List, ind: int) -> Tuple[List, List]:
 def is_safe(problem_dampener: bool, lst: List) -> bool:
 	# check1 will check if our delta is at least 1 and at most 3
 	# check2 will check that we're always increasing or decreasing
-	check1 = 0
-	check2 = 0
+	check1, check2 = 0, 0
 
 	for ind, curr in enumerate(lst):
 		# If we're at the value 0, we don't have any good information yet
